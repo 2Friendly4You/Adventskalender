@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta lang="de" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="description" content="Adventskalender">
+    <meta name="msapplication-TileImage" content="https://tobiasrick.de/data/icon.jpg">
+    <meta property="og:site_name" content="Adventskalender">
+    <meta property="og:title" content="Adventskalender">
+    <meta property="og:description" content="Adventskalender">
+    <meta property="og:image" itemprop="image" content="https://tobiasrick.de/data/icon.jpg">
+    <meta property="og:type" content="website" />
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="300">
+    <meta property="og:image:height" content="300">
+    <meta property="og:url" content="https://tobiasrick.de">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="icon" href="data/icon.jpg" type="image/jpeg">
+    <title>Adventskalender</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8J4JDM8GTP"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-8J4JDM8GTP');
+    </script>
+    <script data-ad-client="ca-pub-8790018561950034" async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap');
+    </style>
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div id="content">
+        <h1>Adventskalender</h1>
+        <div class="break"></div>
+        <div id="advent">
+            <div class="week">
+                <h2 data-aos="fade-up">1. Advent</h2>
+                <div class="break"></div>
+                <div class="day" data-aos="fade-up">
+                    1
+                </div>
+                <div class="day" data-aos="fade-up">
+                    2
+                </div>
+                <div class="day" data-aos="fade-up">
+                    3
+                </div>
+            </div>
+            <div class="week">
+                <h2 data-aos="fade-up">2. Advent</h2>
+                <div class="break"></div>
+                <div class="day" data-aos="fade-up">
+                    4
+                </div>
+                <div class="day" data-aos="fade-up">
+                    5
+                </div>
+                <div class="day" data-aos="fade-up">
+                    6
+                </div>
+                <div class="day" data-aos="fade-up">
+                    7
+                </div>
+                <div class="day" data-aos="fade-up">
+                    8
+                </div>
+                <div class="day" data-aos="fade-up">
+                    9
+                </div>
+                <div class="day" data-aos="fade-up">
+                    10
+                </div>
+            </div>
+            <div class="week">
+                <h2 data-aos="fade-up">3. Advent</h2>
+                <div class="break"></div>
+                <div class="day" data-aos="fade-up">
+                    11
+                </div>
+                <div class="day" data-aos="fade-up">
+                    12
+                </div>
+                <div class="day" data-aos="fade-up">
+                    13
+                </div>
+                <div class="day" data-aos="fade-up">
+                    14
+                </div>
+                <div class="day" data-aos="fade-up">
+                    15
+                </div>
+                <div class="day" data-aos="fade-up">
+                    16
+                </div>
+                <div class="day" data-aos="fade-up">
+                    17
+                </div>
+            </div>
+            <div class="week">
+                <h2 data-aos="fade-up">4. Advent</h2>
+                <div class="break"></div>
+                <div class="day" data-aos="fade-up">
+                    18
+                </div>
+                <div class="day" data-aos="fade-up">
+                    19
+                </div>
+                <div class="day" data-aos="fade-up">
+                    20
+                </div>
+                <div class="day" data-aos="fade-up">
+                    21
+                </div>
+                <div class="day" data-aos="fade-up">
+                    22
+                </div>
+                <div class="day" data-aos="fade-up">
+                    23
+                </div>
+                <div class="day" m data-aos="fade-up">
+                    24
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+
+    <script>
+        $('.day').each(function (i, obj){
+            if(new Date().getDate() < i+1){
+                $(this).addClass('locked');
+                console.log("HERE");
+            }
+        });
+
+        $('.day').click(function(){
+            let date = new Date();
+            let month = date.getDate();
+            console.log(month);
+        });
+    </script>
+
+    <script defer>
+
+        // You can also pass an optional settings object
+        // below listed default settings
+        AOS.init({
+            // Global settings:
+            disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+            startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+            initClassName: 'aos-init', // class applied after initialization
+            animatedClassName: 'aos-animate', // class applied on animation
+            useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+            disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+            debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+            throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+
+
+            // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+            offset: 100, // offset (in px) from the original trigger point
+            delay: 0, // values from 0 to 3000, with step 50ms
+            duration: 400, // values from 0 to 3000, with step 50ms
+            easing: 'ease', // default easing for AOS animations
+            once: false, // whether animation should happen only once - while scrolling down
+            mirror: false, // whether elements should animate out while scrolling past them
+            anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+        });
+    </script>
+
+</body>
+
+</html>
