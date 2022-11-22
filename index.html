@@ -141,14 +141,15 @@
         $('.day').each(function (i, obj){
             if(new Date().getDate() < i+1){
                 $(this).addClass('locked');
-                console.log("HERE");
             }
         });
 
         $('.day').click(function(){
-            let date = new Date();
-            let month = date.getDate();
-            console.log(month);
+            let dayClicked = parseInt($(this).text().trim());
+            console.log(dayClicked);
+            if(new Date().getDate() < dayClicked){
+                console.log("locked");
+            }
         });
     </script>
 
