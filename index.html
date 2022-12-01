@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="style.css" type="text/css">
     <link rel="icon" href="data/icon.jpg" type="image/jpeg">
     <title>Adventskalender</title>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8J4JDM8GTP"></script>
     <script>
@@ -38,6 +39,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
@@ -50,9 +52,19 @@
                 <div class="break"></div>
                 <div class="day" data-aos="fade-up">
                     1
+                    <div class="1-overlay overlay">
+                        <div class="overlay-content">
+                            <p>Test</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="day" data-aos="fade-up">
                     2
+                    <div class="2-overlay overlay">
+                        <div class="overlay-content">
+                            <p>Test</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="day" data-aos="fade-up">
                     3
@@ -138,17 +150,55 @@
     <br><br><br>
 
     <script>
-        $('.day').each(function (i, obj){
-            if(new Date().getDate() < i+1){
+        let content = [
+            "Wusstest du: Ein Tausendfüßler hat maximal 680 Füße.",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+
+        $('.day').each(function (i, obj) {
+            if (new Date().getDate() < i + 1) {
                 $(this).addClass('locked');
             }
         });
 
-        $('.day').click(function(){
+        $('.day').click(function () {
             let dayClicked = parseInt($(this).text().trim());
             console.log(dayClicked);
-            if(new Date().getDate() < dayClicked){
+
+            if (new Date().getDate() >= dayClicked) {
                 console.log("locked");
+                Swal.fire({
+                    title: dayClicked,
+                    text: content[dayClicked - 1],
+                    confirmButtonText: 'Schließen',
+                    background: '#2e2e2e',
+                    color: '#ff0000',
+                    customClass: {
+                        text: 'swal2-popup' //insert class here.
+                    }
+                })
             }
         });
     </script>
