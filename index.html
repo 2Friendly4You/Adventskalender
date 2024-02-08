@@ -31,10 +31,10 @@
     </script>
     <script data-ad-client="ca-pub-8790018561950034" async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap');
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -52,19 +52,9 @@
                 <div class="break"></div>
                 <div class="day" data-aos="fade-up">
                     1
-                    <div class="1-overlay overlay">
-                        <div class="overlay-content">
-                            <p>Test</p>
-                        </div>
-                    </div>
                 </div>
                 <div class="day" data-aos="fade-up">
                     2
-                    <div class="2-overlay overlay">
-                        <div class="overlay-content">
-                            <p>Test</p>
-                        </div>
-                    </div>
                 </div>
                 <div class="day" data-aos="fade-up">
                     3
@@ -183,24 +173,21 @@
             }
         });
 
-        $('.day').click(function () {
-            let dayClicked = parseInt($(this).text().trim());
-            console.log(dayClicked);
-
-            if (new Date().getDate() >= dayClicked) {
-                console.log("locked");
-                Swal.fire({
-                    title: dayClicked,
-                    text: content[dayClicked - 1],
-                    confirmButtonText: 'Schließen',
-                    background: '#2e2e2e',
-                    color: '#ff0000',
-                    customClass: {
-                        text: 'swal2-popup' //insert class here.
-                    }
-                })
-            }
+        $(document).ready(function () {
+            $('.day').on('click', function () {
+                let dayClicked = parseInt($(this).text().trim());
+                if (new Date().getDate() >= dayClicked) {
+                    Swal.fire({
+                        title: dayClicked.toString(),
+                        text: content[dayClicked - 1],
+                        confirmButtonText: 'Schließen',
+                        background: '#2e2e2e',
+                        color: '#ff0000'
+                    });
+                }
+            });
         });
+
     </script>
 
     <script defer>

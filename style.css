@@ -1,7 +1,10 @@
 html {
     margin: 0;
     padding: 0;
-    font-family: 'Mountains of Christmas', cursive;
+    body {
+        font-family: 'Poppins', sans-serif;
+    }
+    
 }
 
 body {
@@ -9,24 +12,21 @@ body {
     color: white;
 }
 
-/* width */
+/* Scrollbar Styles */
 ::-webkit-scrollbar {
     width: 10px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
     background: #000000;
     border-radius: 10px;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
     background: rgb(48, 48, 48);
     border-radius: 10px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: rgb(59, 59, 59);
 }
@@ -54,32 +54,32 @@ body {
     justify-content: center;
     flex-wrap: wrap;
     flex: 1 1 auto;
-
     margin: 10px;
 }
 
 .day {
     background-color: rgba(128, 128, 128, 0.3);
-
     min-width: 100px;
     min-height: 100px;
-
     margin: 5px;
     padding: 5px;
-
     cursor: pointer;
-
     border-radius: 20px;
-
     text-align: center;
     vertical-align: middle;
-    line-height: 100px;
-
+    line-height: 90px; /* Adjusted for better alignment */
     font-size: xx-large;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Added transition */
 }
 
 .day:hover {
-    filter: brightness(2);
+    filter: brightness(1.5);
+    transform: scale(1.1); /* Scale effect on hover */
+}
+
+.day:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.5); /* Focus style for accessibility */
 }
 
 .break {
@@ -93,7 +93,7 @@ body {
 }
 
 .locked:hover {
-    filter: brightness(1);
+    filter: brightness(1); /* No change on hover for locked */
 }
 
 .overlay {
@@ -102,4 +102,13 @@ body {
 
 .swal2-popup {
     font-size: 1.5rem !important;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 600px) {
+    .day {
+        min-width: 75px; /* Smaller day boxes for mobile */
+        line-height: 70px; /* Adjust line-height for smaller boxes */
+        font-size: large; /* Smaller font size for smaller screens */
+    }
 }
