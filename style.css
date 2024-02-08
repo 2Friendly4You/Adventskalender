@@ -67,7 +67,7 @@ body {
     border-radius: 20px;
     text-align: center;
     vertical-align: middle;
-    line-height: 90px; /* Adjusted for better alignment */
+    line-height: 100px; /* Adjusted for better alignment */
     font-size: xx-large;
     transition: transform 0.3s ease, filter 0.3s ease; /* Added transition */
 }
@@ -102,13 +102,4 @@ body {
 
 .swal2-popup {
     font-size: 1.5rem !important;
-}
-
-/* Responsive Design Adjustments */
-@media (max-width: 600px) {
-    .day {
-        min-width: 75px; /* Smaller day boxes for mobile */
-        line-height: 70px; /* Adjust line-height for smaller boxes */
-        font-size: large; /* Smaller font size for smaller screens */
-    }
 }
